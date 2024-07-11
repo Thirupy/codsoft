@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .history {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .history h2 {
+            text-align: center;
+        }
+        .history img {
+    max-width: 800px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.history img:hover {
+    transform: scale(1.05);
+}
+
+        .prediction-button {
+            margin-top: 20px;
+        }
+        .prediction-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .prediction-button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Titanic Survival Prediction</h1>
+</header>
+
+<div class="content">
+    <div class="history">
+        <h2>History of the Titanic</h2>
+        <img src="{{ url_for('static', filename='images/titanic.jpg') }}" alt="RMS Titanic">
+        <p>
+            The RMS Titanic was a British passenger liner operated by the White Star Line that sank in the North Atlantic Ocean on 15 April 1912 after striking an iceberg during her maiden voyage from Southampton to New York City. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making the sinking one of modern history's deadliest peacetime commercial marine disasters. The Titanic was the largest ship afloat at the time she entered service and was the second of three Olympic-class ocean liners operated by the White Star Line. She was built by the Harland and Wolff shipyard in Belfast. Thomas Andrews, her architect, died in the disaster.
+        </p>
+        <div class="prediction-button">
+            <center>
+            <a href="/predict">Go to Prediction Page</a>
+            </center>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

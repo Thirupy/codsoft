@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Classification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('./static/sales.png') no-repeat center center fixed;
+            background-size: cover;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center">Welcome to Sales Prediction</h3>
+                <form action="/predict" method="post">
+                    <div class="form-group">
+                        <label for="TV">TV advertising expenditure</label>
+                        <input type="text" class="form-control" id="TV" name="TV" placeholder="Enter TV advertising expenditure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Radio">Radio advertising expenditure</label>
+                        <input type="text" class="form-control" id="Radio" name="Radio" placeholder="Enter Radio advertising expenditure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="News">News Paper advertising expenditure</label>
+                        <input type="text" class="form-control" id="News" name="News" placeholder="Enter News Paper advertising expenditure" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Predict Sales</button>
+                </form>
+                {% if prediction_text %}
+                <div class="alert alert-info text-center mt-4" role="alert">
+                    {{ prediction_text }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
